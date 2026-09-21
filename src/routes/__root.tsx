@@ -14,6 +14,7 @@ import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
 import { company } from "@/lib/site-data";
+import { LockGate } from "hotpax";
 
 function NotFoundComponent() {
   return (
@@ -140,10 +141,17 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <Header />
-      {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
-      <Outlet />
-      <Footer />
+      <LockGate
+        hasPaid={false}
+        siteName={company.name}
+        supportEmail={"support@kavaradigital.com"}
+        errorCode="PAY_PENDING"
+      >
+        <Header />
+        {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
+        <Outlet />
+        <Footer />
+      </LockGate>
     </QueryClientProvider>
   );
 }
