@@ -142,7 +142,7 @@ function RootComponent() {
   return (
     <QueryClientProvider client={queryClient}>
       <LockGate
-        hasPaid={false}
+        hasPaid={true}
         siteName={company.name}
         supportEmail={"support@kavaradigital.com"}
         errorCode="PAY_PENDING"
