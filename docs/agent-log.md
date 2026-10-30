@@ -1,5 +1,11 @@
 # Agent Log
 
+## [2026-10-30 10:21:00 CET] - Update @tanstack/react-start to Patch CVE-2026-102989
+
+- **Problem:** Vercel deployment failed because `@tanstack/react-start@1.168.32` contained a known cross-site scripting (XSS) vulnerability (`CVE-2026-102989`), requiring version `1.168.60` or later.
+- **Solution:** Updated `@tanstack/react-start` in [package.json](file:///c:/Users/pc/dev/work-dev/dordtsche-v1/package.json) to `^1.168.60` (resolved to `1.169.4` in [bun.lock](file:///c:/Users/pc/dev/work-dev/dordtsche-v1/bun.lock)) using Bun.
+- **Date & Time:** 2026-10-30 10:21:00 CET.
+
 ## [2026-09-21 20:05:00 CET] - Implement Frontend Access Lock via hotpax
 
 - **Problem:** The client/owner of the site has not paid the developer, requiring the frontend to be locked with an access restriction screen.
